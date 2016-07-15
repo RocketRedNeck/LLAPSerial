@@ -106,6 +106,15 @@ void LLAPSerial::sendMessage(String sToSend)
     Serial.flush();
 }
 
+void LLAPSerial::sendExtendedMessage(String &sToSend)
+{
+    Serial.print('n');
+  	Serial.print(sToSend.c_str());
+  	Serial.println("");
+    Serial.flush();
+}
+
+
 void LLAPSerial::sendMessage(char* sToSend)
 {
 	sendMessage(sToSend,NULL);
